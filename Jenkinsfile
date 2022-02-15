@@ -21,7 +21,6 @@ pipeline {
             steps {
                 echo "DOCKERHUB_CREDENTIALS_USR: $DOCKERHUB_CREDENTIALS_USR"
                 echo "NAME: $NAME"
-                echo "STAGE: $STAGE1"
             }
         }
     }
