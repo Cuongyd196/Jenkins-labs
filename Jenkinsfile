@@ -8,8 +8,12 @@ pipeline {
 
     stages {
         stage('Init') {
+            environment {
+                STAGE1 = 'Init'
+            }
             steps {
                 echo "Init..."
+                echo "STAGE: $STAGE1"
                 telegramSend('Init job')
             }
         }
@@ -17,6 +21,7 @@ pipeline {
             steps {
                 echo "DOCKERHUB_CREDENTIALS_USR: $DOCKERHUB_CREDENTIALS_USR"
                 echo "NAME: $NAME"
+                echo "STAGE: $STAGE1"
             }
         }
     }
