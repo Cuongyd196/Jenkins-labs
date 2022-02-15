@@ -21,6 +21,9 @@ pipeline {
             steps {
                 echo "DOCKERHUB_CREDENTIALS_USR: $DOCKERHUB_CREDENTIALS_USR"
                 echo "NAME: $NAME"
+                echo "BUILD_ID : $BUILD_ID"
+                echo "BUILD_NAME : $BUILD_NAME"
+                telegramSend('Build - $PROJECT_NAME – # $BUILD_NUMBER – STATUS: $BUILD_STATUS!')
             }
         }
     }
