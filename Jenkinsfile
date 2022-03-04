@@ -25,6 +25,12 @@ pipeline {
                 echo "BUILD_URL : $BUILD_URL"
                 telegramSend('Build - $PROJECT_NAME – # $BUILD_NUMBER – STATUS: $BUILD_STATUS!')
             }
+            
         }
+        post {
+        success {
+            emailext body: 'A Test EMail', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test'
+        }
+    }
     }
 }
